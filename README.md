@@ -11,7 +11,9 @@
   The Note Taker application is an Express.js back-end based application that promotes users the ability to write and save notes by retrieving them from a JSON file  as server
   
   ## instalation
-  * Clone the repo to local machine. * Install npm dependencies  (npm install express). * Run tthe app through the command line by typing node .
+  * Clone the repo to local machine. 
+  * Install npm dependencies  (npm install express). 
+  * Run tthe app through the command line by typing node .
 
   ## usage
   The application is used as a note saving environment.
