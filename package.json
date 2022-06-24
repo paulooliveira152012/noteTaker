@@ -1,0 +1,19 @@
+{
+  "name": "notetaker",
+  "version": "1.0.0",
+  "description": "![badge](https://img.shields.io/badge/license-MIT-green) ![badge](https://img.shields.io/github/last-commit/paulooliveira152012/noteTaker) - [instalation](#instalation) - [usage](#usage) - [contribution](#contribution) - [tests](#tests)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paulooliveira152012/noteTaker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/paulooliveira152012/noteTaker/issues"
+  },
+  "homepage": "https://github.com/paulooliveira152012/noteTaker#readme"
+}
