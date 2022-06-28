@@ -1,4 +1,6 @@
+//requesting access to fileSystem
 const fs = require('fs');
+//providing utility to work with different file and diretory paths
 const path = require('path');
 //request express file access from node_modules
 const express = require('express');
