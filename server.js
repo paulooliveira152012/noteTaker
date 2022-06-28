@@ -14,7 +14,6 @@ app.use(express.urlencoded({ extended: true}));
 app.use(express.json());
 //creating a route to request data form
 const { notes } = require("./db/db.json");
-const { type } = require('os');
 //getting access to public folder
 app.use(express.static('public'));
 
