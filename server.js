@@ -1,6 +1,3 @@
-const apiRoutes = require('./routes/apiRoutes');
-const htmlRoutes = require("./toutes/htmlRoutes");
-
 //requesting access to fileSystem
 const fs = require('fs');
 //providing utility to work with different file and diretory paths
@@ -28,15 +25,16 @@ const writeFileAsync = util.promisify(fs.writeFile);
 
 
 //API routes (GET request)
-app.get("./api/notes", function(req, res) {
+app.get("/api/notes", function(req, res) {
     readFileAsync("./db/db.json", "utf8").then(function(data) {
+        console.log(data)
         notes = [].concat(JSON.parse(data))
         res.json(notes);
-    })
+    }).catch(console.log)
 });
 
 //API routes (POST request)
-app.post("./api/notes", function(req, res) {
+app.post("/api/notes", function(req, res) {
     const note = req.body;
     readFileAsync("./db/db.json", "utf8").then(function(data) {
         const notes = [].concat(JSON.parse(data));
@@ -50,9 +48,9 @@ app.post("./api/notes", function(req, res) {
 });
 
 //API routes (DELETE request)
-app.delete("./api/notes/:id", function(req, res) {
+app.delete("/api/notes/:id", function(req, res) {
     const idDelete = parseInt(req.params.id);
-    readFileAsync("./db.db.json", "utf8").then(function(data) {
+    readFileAsync("./db/db.json", "utf8").then(function(data) {
         const notes = [].concat(JSON.parse(data));
         const notesData = []
         for(let i = 0; i<notes.length; i++) {
@@ -68,7 +66,7 @@ app.delete("./api/notes/:id", function(req, res) {
 })
 
 //API routes to HTML
-app.get("notes", function(req, res) {
+app.get("/notes", function(req, res) {
     res.sendFile(path.join(__dirname, "./public/notes.html"));
 });
 
@@ -84,3 +82,4 @@ app.get("*", function(req, res) {
 app.listen(PORT, () => {
     console.log(`API server now on port ${PORT}!`)
 });
+
