@@ -1,30 +1,30 @@
-//request express file access from node_modules
-const express = require('express');
-//providing utility to work with different file and diretory paths
-const path = require('path');
+const apiRoutes = require('./routes/apiRoutes');
+const htmlRoutes = require("./toutes/htmlRoutes");
+
 //requesting access to fileSystem
 const fs = require('fs');
+//providing utility to work with different file and diretory paths
+const path = require('path');
+//request express file access from node_modules
+const express = require('express');
+//specifying which port to use
+const PORT = process.env.PORT || 3001;
+//assign express function to a variable to later chain on methods to Express.js server
+const app = express();
 
 const util = require("util");
+
+//parse incoming string or array data
+app.use(express.urlencoded({ extended: true}));
+//getting access to public folder
+app.use(express.static('public'));
+//parse incoming JSON data
+app.use(express.json());
 
 
 //Asynchronous 
 const readFileAsync = util.promisify(fs.readFile);
 const writeFileAsync = util.promisify(fs.writeFile);
-
-//server
-//assign express function to a variable to later chain on methods to Express.js server
-const app = express();
-//specifying which port to use
-const PORT = process.env.PORT || 3001;
-//parse incoming string or array data
-app.use(express.urlencoded({ extended: true}));
-//parse incoming JSON data
-app.use(express.json());
-//getting access to public folder
-app.use(express.static('public'));
-
-
 
 
 //API routes (GET request)
