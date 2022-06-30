@@ -28,8 +28,12 @@ const writeFileAsync = util.promisify(fs.writeFile);
 app.get("/api/notes", function(req, res) {
     readFileAsync("./db/db.json", "utf8").then(function(data) {
         console.log(data)
-        notes = [].concat(JSON.parse(data))
-        res.json(notes);
+        if(data) {
+            notes = [].concat(JSON.parse(data))
+            res.json(notes);
+            return
+        }
+        res.json([])
     }).catch(console.log)
 });
 
@@ -37,7 +41,7 @@ app.get("/api/notes", function(req, res) {
 app.post("/api/notes", function(req, res) {
     const note = req.body;
     readFileAsync("./db/db.json", "utf8").then(function(data) {
-        const notes = [].concat(JSON.parse(data));
+        const notes = data ? [].concat(JSON.parse(data)) : [];
         note.id = notes.length + 1
         notes.push(note);
         return notes
@@ -82,4 +86,3 @@ app.get("*", function(req, res) {
 app.listen(PORT, () => {
     console.log(`API server now on port ${PORT}!`)
 });
-
