@@ -31,12 +31,9 @@
 
 ![GitHub-repository] (https://github.com/paulooliveira152012/noteTaker)
 
-HTML Screen-shot
-![HTML ScreenShot](assets/images/)
+Back-end JS Screen-shot
+![HTML ScreenShot](./public/assets/images/Screen%20Shot%202022-06-30%20at%203.36.44%20PM.png)
 
-CSS Screen-shot
-![CSS ScreenShot](assets/images/)
-
-Website Screen-shot
-![WebsiteScreenshot](assets/images/)
+Back-end JS Screen-shot
+![HTML ScreenShot](./public/assets/images/Screen%20Shot%202022-06-30%20at%203.37.04%20PM.png)
 
